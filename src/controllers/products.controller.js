@@ -7,6 +7,12 @@ export const getProducts = async (req, res) => {
     res.json(products);
 }
 
+export const getProduct = async (req, res) => {
+    const product = await Product.findById(req.params.id);
+    if (!product) return res.status(404).json({ message: "Producto no encontrado" });
+    res.json(product);
+}
+
 export const createProducts = async (req, res) => {
     const { ...body } = req.body
     const product = new Product({ body });
@@ -14,12 +20,6 @@ export const createProducts = async (req, res) => {
     res.json(savedProduct);
 };
     
-
-export const getProduct = async (req, res) => {
-    const product = await Product.findById(req.params.id);
-    if (!product) return res.status(404).json({ message: "Producto no encontrado" });
-    res.json(product);
-}
 
 export const updateProduct = async (req, res) => {
     const product = await Product.findByIdAndUpdate(req.params.id, req.body, {

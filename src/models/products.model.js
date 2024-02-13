@@ -13,10 +13,15 @@ const productSchema = mongoose.Schema({
         type: String,
         require: true
     },
-    comentario: {
-        type: String
-    },
     fecha_creacion: { type: Date, expires: 86400, default: Date.now },
+    description: {
+        type: String,
+        required: true
+    },
+    ubicacion: {
+        type: String,
+        required: true
+    },
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
