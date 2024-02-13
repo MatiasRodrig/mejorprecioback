@@ -9,7 +9,7 @@ const ventasSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    fecha_creacion: { type: Date, expires: 86400, default: Date.now },
+    fecha_creacion: { type: Date, default: Date.now },
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
@@ -17,9 +17,13 @@ const ventasSchema = mongoose.Schema({
     },
     description: {
         type: String
-    
+
     },
     ubicacion: {
+        type: String,
+        required: true
+    },
+    fecha: {
         type: String,
         required: true
     }
