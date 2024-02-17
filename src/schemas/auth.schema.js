@@ -24,7 +24,7 @@ export const registerSchema = z.object({
     }),
     telefono: z.number({
         required_error: "El telefono es requerido",
-    }).length(10, {
+    }).min(10, {
         message: "El telefono debe tener 10 digitos"
     })
 })
