@@ -1,5 +1,4 @@
 import app from './app.js'
-import {URI} from './db.js' 
 import mongoose from 'mongoose'
 
 
@@ -10,7 +9,7 @@ import mongoose from 'mongoose'
 
 const connectDB = async () => {
     try {
-      await mongoose.connect(URI);
+      await mongoose.connect(process.env.URI, { useNewUrlParser: true, useUnifiedTopology: true })
       console.log("MongoDB is connected");
     } catch (error) {
       console.error(error);
