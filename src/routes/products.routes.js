@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { verifyToken } from "../controllers/auth.controller";
+import { verifyToken } from "../controllers/auth.controller.js";
 import { getProducts, createProducts, getProduct, updateProduct, deleteProduct } from '../controllers/products.controller.js'
 import { productSchema } from "../schemas/products.schema.js";
 import { validator } from "../middlewares/validator.middleware.js"
