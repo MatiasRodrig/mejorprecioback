@@ -12,18 +12,13 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 
 
-// Error handling middleware
-app.use((err, req, res, next) => {
-  // Handle the error here
-  console.error(err);
-  res.status(500).json({ error: 'Internal Server Error' });
-});
+
 
 // Pages routes
 
 app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
+  res.send('Hello World!')
+})
 
 app.use('/api', authRoutes)
 
