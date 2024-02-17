@@ -4,12 +4,12 @@ export const registerSchema = z.object({
     nombre: z.string({
         required_error: "El nombre es requerido",
 
-    }).minLength(3, {
+    }).min(3, {
         message: "El nombre debe tener al menos 3 caracteres"
     }),
     apellido: z.string({
         required_error: "El apellido es requerido",
-    }).minLength(3, {
+    }).min(3, {
         message: "El apellido debe tener al menos 3 caracteres"
     }),
     email: z.string({
@@ -19,7 +19,7 @@ export const registerSchema = z.object({
     }),
     password: z.string({
         required_error: "La contraseña es requerida",
-    }).minLength(6, {
+    }).min(6, {
         message: "La contraseña debe tener al menos 6 caracteres"
     }),
     telefono: z.number({
@@ -38,7 +38,7 @@ export const loginSchema = z.object({
     }),
     password: z.string({
         required_error: "La contraseña es requerida",
-    }).minLength(6, {
+    }).min(6, {
         message: "La contraseña debe tener al menos 6 caracteres"
     })
 })
